@@ -3,6 +3,8 @@ OS Developement Research
 
 > Note: Subprojects also contain `README` files. They probably won't contain much information for a while.
 
+> Another Note: This project is heavily derived from the [Writing an OS in Rust](https://os.phil-opp.com) blog.
+
 ### Requirements
 - [Rust](https://www.rust-lang.org) 1.69.0+
     - `cargo-make`
