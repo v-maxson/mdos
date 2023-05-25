@@ -1,6 +1,8 @@
 # MDOS
 OS Developement Research
 
+> Note: Subprojects also contain `README` files. They probably won't contain much information for a while.
+
 ### Requirements
 - [Rust](https://www.rust-lang.org) 1.69.0+
     - `cargo-make`
