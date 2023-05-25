@@ -1,4 +1,4 @@
-# mdos
+# MDOS
 OS Developement Research
 
 ### Requirements

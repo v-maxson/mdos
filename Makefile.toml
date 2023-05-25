@@ -39,7 +39,7 @@ cwd = "out"
 command = "qemu-system-x86_64"
 args = [
     "-drive",
-    "format=raw,file=./mdos.img"
+    "format=raw,file=./MDOS.img"
 ]
 dependencies = ["gen-img"]
 

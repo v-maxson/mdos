@@ -9,6 +9,6 @@ fn main() {
     let kernel = out_dir.join("kernel");
 
     // create a BIOS disk image
-    let bios_path = out_dir.join("mdos.img");
+    let bios_path = out_dir.join("MDOS.img");
     bootloader::BiosBoot::new(&kernel).create_disk_image(&bios_path).unwrap();
 }
