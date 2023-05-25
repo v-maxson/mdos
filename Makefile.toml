@@ -1,0 +1,45 @@
+[tasks.build-kernel]
+cwd = "./kernel/"
+command = "cargo"
+args = ["build", "--release"]
+
+[tasks.build-imggen]
+cwd = "./imggen/"
+command = "cargo"
+args = ["build", "--release"]
+
+[tasks.build]
+clear = true # Clear default cargo-make "build" task.
+dependencies = [
+    "build-kernel",
+    "build-imggen"
+]
+
+[tasks.mv] # Moves required files into "out" dir.
+script_runner = "@shell"
+script = '''
+mkdir -p out
+mv ./kernel/target/mdos/release/kernel out
+mv ./imggen/target/release/imggen.exe out
+'''
+dependencies = ["build"]
+
+[tasks.gen-img] # Generates a bootable image file from kernel ELF
+cwd = "out"
+script_runner = "@shell"
+script = '''
+./imggen
+rm -f ./imggen.exe
+rm -f ./kernel
+'''
+dependencies = ["mv"]
+
+[tasks.run-qemu] # Runs QEMU with a generated bootable image.
+cwd = "out"
+command = "qemu-system-x86_64"
+args = [
+    "-drive",
+    "format=raw,file=./mdos.img"
+]
+dependencies = ["gen-img"]
+

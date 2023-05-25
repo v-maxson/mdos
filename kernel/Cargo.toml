@@ -1,0 +1,16 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "kernel"
+path = "./src/kernel_main.rs"
+
+[dependencies]
+bootloader_api = "0.11.3" # Required for bootloader.
+noto-sans-mono-bitmap = "0.2.0" # Font for printing to screen.
+spin = "0.9.8" # Sync Primitives
+volatile = "0.4.6" # Volatile memory wrapper (used for testing purposes)
+x86_64 = "0.14.10" # x86_64 Instruction Support
+pic8259 = "0.10.4" # 8259(A) Programmable Interupt Controllers (PIC)
