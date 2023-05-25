@@ -2,7 +2,7 @@
 OS Developement Research
 
 ### Requirements
-- Rust 1.69.0+
+- [Rust](https://www.rust-lang.org) 1.69.0+
     - `cargo-make`
     - `x86_64-unknown-none` target
 - [QEMU](https://www.qemu.org)
